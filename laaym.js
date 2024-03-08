@@ -48,3 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all testimonials
+    var testimonials = document.querySelectorAll('.testimonial');
+
+    // Set the index of the active testimonial
+    var currentIndex = 0;
+
+    // Display the first testimonial
+    testimonials[currentIndex].classList.add('active');
+
+    // Function to display the next testimonial
+    function nextTestimonial() {
+        testimonials[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        testimonials[currentIndex].classList.add('active');
+    }
+
+    // Automatically change testimonials every 5 seconds
+    setInterval(nextTestimonial, 5000);
+});
+function search() {
+    // Get the input value
+    var query = document.getElementById("searchInput").value;
+    
+    // Perform search functionality (e.g., redirect to search results page)
+    // Replace this with your actual search functionality
+    alert("Searching for: " + query);
+}
+
+
+
+//https://www.youtube.com/watch?v=thyHHCj0CZk
